@@ -17,6 +17,8 @@ result='dhamija';
                 }
  });
     */
+    result = request.param('firstname');
+    console.log("the firstname is"+result);
     
     var vbcsurl = 'https://abcs1-oracletemplates.builder.us.oraclecloud.com/rt/testwebview/1.0/webApps/testwebviewapp/?firstname=' + result;
     
