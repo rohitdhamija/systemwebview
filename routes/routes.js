@@ -9,15 +9,16 @@ app.get("/", function(req, res) {
 app.post("/webviewparams",function(request,response){
 
 console.log(JSON.stringify(request.body));
-    /*
+
+    result = 'dummy';
  request.body.parameters.forEach(parameter => {
                 if (parameter.key === 'firstname') {
                     result = parameter.value;
                     
                 }
  });
- */
-    var result = request.body.firstname;
+
+//    var result = request.body.parameters.firstname;
    
     
     console.log("the firstname is: "+result);
