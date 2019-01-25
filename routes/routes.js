@@ -17,6 +17,7 @@ result='dhamija';
                 }
  });
     */
+    
     var vbcsurl = 'https://abcs1-oracletemplates.builder.us.oraclecloud.com/rt/testwebview/1.0/webApps/testwebviewapp/?firstname=' + result;
     
     console.log(vbcsurl)
