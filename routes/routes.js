@@ -7,8 +7,8 @@ app.get("/", function(req, res) {
  
     
 app.post("/webviewparams",function(request,response){
+
 console.log(JSON.stringify(request.body));
-result='dhamija';
     /*
  request.body.parameters.forEach(parameter => {
                 if (parameter.key === 'firstname') {
@@ -16,9 +16,11 @@ result='dhamija';
                     
                 }
  });
-    */
-    result = request.param('firstname');
-    console.log("the firstname is"+result);
+ */
+    var result = request.body.firstname;
+   
+    
+    console.log("the firstname is: "+result);
     
     var vbcsurl = 'https://abcs1-oracletemplates.builder.us.oraclecloud.com/rt/testwebview/1.0/webApps/testwebviewapp/?firstname=' + result;
     
