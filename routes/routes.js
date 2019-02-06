@@ -1,6 +1,7 @@
 var appRouter = function (app) {
 
 app.get("/", function(req, res) {
+    console.log(__dirname);
     res.send("Hello World");
 });    
     
@@ -60,7 +61,7 @@ console.log(JSON.stringify(request.body));
     console.log("callbackurl: "+callbackurl);
 
     
-    var webviewURL = 'index.html/?fName='+fname+'&lName='+lname+'&callbackURL='+callbackurl;
+    var webviewURL = __dirname + 'index.html/?fName='+fname+'&lName='+lname+'&callbackURL='+callbackurl;
     
     console.log('webviewURL: '+ webviewURL);
     
