@@ -5,8 +5,7 @@ app.get("/", function(req, res) {
 });    
     
  
-    
-app.post("/webviewparams",function(request,response){
+app.post("/webviewparamsvbcs",function(request,response){
 
 console.log(JSON.stringify(request.body));
 
@@ -28,6 +27,45 @@ console.log(JSON.stringify(request.body));
     console.log(vbcsurl)
   const resbody = {
         'webview.url': vbcsurl
+    };
+    console.log('Response body: ' + JSON.stringify(resbody));
+    response.json(resbody);
+    
+    
+}
+    
+app.post("/webviewparams",function(request,response){
+
+console.log(JSON.stringify(request.body));
+
+
+    var fname, lname, callbackurl;
+ request.body.parameters.forEach(parameter => {
+                if (parameter.key === 'firstname') {
+                    fname = parameter.value;
+                    
+                }
+                if (parameter.key === 'lastname') {
+                    lname = parameter.value;
+                    
+                }
+                if (parameter.key === 'webview.onDone') {
+                    callbackurl = parameter.value;
+                    
+                }
+ });
+    
+    console.log("fname: "+fname);
+    console.log("lname: "+lname);
+    console.log("callbackurl: "+callbackurl);
+
+    
+    var webviewURL = 'index.html/?fName=' + fname + '&lName=' lname + '&callbackURL'=callbackurl;
+    
+    console.log('webviewURL: '+ webviewURL);
+    
+  const resbody = {
+        'webview.url': webviewURL
     };
     console.log('Response body: ' + JSON.stringify(resbody));
     response.json(resbody);

@@ -13,11 +13,11 @@
 
 var parameters = new URL(window.location).searchParams;
 
-document.getElementById("first_name").innerHTML =  parameters.get('param1') //1
+document.getElementById("first_name").innerHTML =  parameters.get('fName') //1
 
-document.getElementById("last_name").innerHTML =  parameters.get('param2') //2
+document.getElementById("last_name").innerHTML =  parameters.get('lName') //2
     
-var callbackURL = parameters.get('param3');
+var callbackURL = parameters.get('callbackURL');
     
 var updateCallbackAction;
 
