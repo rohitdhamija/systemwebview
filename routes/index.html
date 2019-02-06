@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Please confirm your details</h2>
+    <h3>First name: <span id="first_name"></span></h3>
+    <h3>Last name: <span id="last_name"></span></h3>
+   
+    <p> Please click on <b>Submit</b> button after verifying above details, else click <b>Cancel</b> button for editing.</p>
+    <button onclick="submitbtn()">Submit</button>
+    <button onclick="cancelbtn()">Cancel</button>
+
+<script>
+
+var parameters = new URL(window.location).searchParams;
+
+document.getElementById("first_name").innerHTML =  parameters.get('param1') //1
+
+document.getElementById("last_name").innerHTML =  parameters.get('param2') //2
+    
+var callbackURL = parameters.get('param3');
+    
+var updateCallbackAction;
+
+function sendCallBack() {
+    alert(updateCallbackAction);
+}
+    
+function submitbtn() {
+  updateCallbackAction = callbackURL + "Submitted succesfully";
+  sendCallBack();
+}
+    
+function cancelbtn() {
+  updateCallbackAction =  callbackURL + "Not submitted";
+  sendCallBack();
+}    
+
+</script>
+
+
+ 
+</body>
+</html>
