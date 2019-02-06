@@ -25,7 +25,7 @@ var callbackvalue;
 function sendCallBack(cbUrl, cbData) {
 var settings = {
   "async": true,
- 
+  "crossDomain": true,
   "url": cbUrl,
   "method": "POST",
   "headers": {
