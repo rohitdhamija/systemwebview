@@ -9,7 +9,8 @@
     <button onclick="submitbtn()">Submit</button>
     <button onclick="cancelbtn()">Cancel</button>
 
-<script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
 
 var parameters = new URL(window.location).searchParams;
 
@@ -19,20 +20,36 @@ document.getElementById("last_name").innerHTML =  parameters.get('lName') //2
     
 var callbackURL = parameters.get('callbackURL');
     
-var updateCallbackAction;
+var callbackvalue;
 
-function sendCallBack() {
-    alert(updateCallbackAction);
+function sendCallBack(var url, var data) {
+var settings = {
+  "async": true,
+ 
+  "url": url,
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/json",
+    "cache-control": "no-cache",
+
+  },
+  "processData": false,
+  "data": {"outputfromWeb": data}
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 }
     
 function submitbtn() {
-  updateCallbackAction = callbackURL + "Submitted succesfully";
-  sendCallBack();
+  callbackvalue = "Submitted succesfully";
+  sendCallBack(callbackURL,callbackvalue);
 }
     
 function cancelbtn() {
-  updateCallbackAction =  callbackURL + "Not submitted";
-  sendCallBack();
+  callbackvalue = "Not submitted";
+  sendCallBack(callbackURL,callbackvalue);
 }    
 
 </script>
