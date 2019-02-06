@@ -61,7 +61,7 @@ console.log(JSON.stringify(request.body));
     console.log("callbackurl: "+callbackurl);
 
     
-    var webviewURL = __dirname + 'index.html/?fName='+fname+'&lName='+lname+'&callbackURL='+callbackurl;
+    var webviewURL = 'https://rohitdhamija.github.io/systemwebview/index.html/?fName='+fname+'&lName='+lname+'&callbackURL='+callbackurl;
     
     console.log('webviewURL: '+ webviewURL);
     
