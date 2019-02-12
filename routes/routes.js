@@ -40,7 +40,7 @@ app.post("/webviewparams",function(request,response){
 console.log(JSON.stringify(request.body));
 
 
-    var fname, lname, callbackurl;
+    var fname, lname, merchant, amount, date, callbackurl;
  request.body.parameters.forEach(parameter => {
                 if (parameter.key === 'firstname') {
                     fname = parameter.value;
@@ -50,6 +50,18 @@ console.log(JSON.stringify(request.body));
                     lname = parameter.value;
                     
                 }
+              if (parameter.key === 'merchant') {
+                    merchant = parameter.value;
+                    
+                }
+              if (parameter.key === 'amount') {
+                    amount = parameter.value;
+                    
+                }
+              if (parameter.key === 'date') {
+                    date = parameter.value;
+                    
+                }     
                 if (parameter.key === 'webview.onDone') {
                     callbackurl = parameter.value;
                     
@@ -58,6 +70,9 @@ console.log(JSON.stringify(request.body));
     
     console.log("fname: "+fname);
     console.log("lname: "+lname);
+    console.log("merchant: "+merchant);
+    console.log("date: "+date);
+    console.log("amount: "+amount);    
     console.log("callbackurl: "+callbackurl);
 
     
