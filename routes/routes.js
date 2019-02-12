@@ -76,7 +76,7 @@ console.log(JSON.stringify(request.body));
     console.log("callbackurl: "+callbackurl);
 
     
-    var webviewURL = 'https://systemwebviewwebsite.herokuapp.com/confirm.html?fName='+fname+'&lName='+lname+'&callbackURL='+callbackurl;
+    var webviewURL = 'https://systemwebviewwebsite.herokuapp.com/confirm.html?fName='+fname+'&lName='+lname+'&merchant='+merchant+'&date='+date+'&amount='+amount+'&callbackURL='+callbackurl;
     
     console.log('webviewURL: '+ webviewURL);
     
