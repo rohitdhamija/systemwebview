@@ -34,7 +34,24 @@ console.log(JSON.stringify(request.body));
     
     
 });
+   
+app.post("/routefinder",function(request,response){
+
+console.log(JSON.stringify(request.body));
+
+
     
+    var mapURL = 'https://systemwebviewwebsite.herokuapp.com/mazemapbasicroute.html';
+    
+    console.log(mapURL)
+  const resbody = {
+        'webview.url': mapURL
+    };
+    console.log('Response body: ' + JSON.stringify(resbody));
+    response.json(resbody);
+    
+    
+});    
 app.post("/webviewparams",function(request,response){
 
 console.log(JSON.stringify(request.body));
