@@ -60,7 +60,24 @@ console.log(JSON.stringify(request.body));
     
     
 });
-   
+
+app.post("/vbcsselfhosted",function(request,response){
+
+console.log(JSON.stringify(request.body));
+
+
+    
+    var vbURL = 'https://systemwebviewwebsite.herokuapp.com/frontpage/index.html';
+    
+    console.log(vbURL)
+  const resbody = {
+        'webview.url': vbURL
+    };
+    console.log('Response body: ' + JSON.stringify(resbody));
+    response.json(resbody);
+    
+    
+});    
 app.post("/routefinder",function(request,response){
 
 console.log(JSON.stringify(request.body));
