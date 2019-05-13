@@ -5,7 +5,12 @@ app.get("/", function(req, res) {
     res.send("Hello World");
 });    
     
- 
+app.post('/ko_webview', function (req, res) {
+    console.log(JSON.stringify(req.body));
+    console.log('test');
+    res.status(200).send({"webview.url": "https://jensvbcs-oraseemeatechse.builder.ocp.oraclecloud.com/ic/builder/design/KO_Test/1.0/preview/webApps/vbcstest/"});
+}); 
+    
 app.post("/webviewparamsvbcs",function(request,response){
 console.log(JSON.stringify(request.body));
 
