@@ -83,6 +83,32 @@ console.log(JSON.stringify(request.body));
     
     
 });    
+app.post("/webviewtaleo",function(request,response){
+
+console.log(JSON.stringify(request.body));
+    var callbackurl;
+    
+ request.body.parameters.forEach(parameter => {
+             
+                if (parameter.key === 'webview.onDone') {
+                    callbackurl = parameter.value;
+                    
+                }
+ });
+
+    
+    var mapURL = 'https://qa.tbe.taleocloud.net/qa1/ats/digitalAssitantLogin.jsp?callbackUrl='+callbackurl;
+    
+    console.log(mapURL)
+  const resbody = {
+        'webview.url': mapURL
+    };
+    console.log('Response body: ' + JSON.stringify(resbody));
+    response.json(resbody);
+    
+    
+});  
+    
 app.post("/routefinder",function(request,response){
 
 console.log(JSON.stringify(request.body));
